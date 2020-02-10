@@ -28,9 +28,9 @@ public class PurchaseTests {
 	private static final String FIRST_NAME_2 = "First2";
 	private static final String LAST_NAME_1 = "Last1";
 	private static final String LAST_NAME_2 = "Last2";
-	private static final List<Order> EXPECTED_ORDERS = List.of(new Order(List.of(BigDecimal.valueOf(2),
-	                                                                             BigDecimal.valueOf(40))),
-	                                                           new Order(List.of(BigDecimal.valueOf(8))));
+	private static final List<Order> EXPECTED_ORDERS = List.of(new Order(List.of(BigDecimal.valueOf(3),
+	                                                                             BigDecimal.valueOf(41))),
+	                                                           new Order(List.of(BigDecimal.valueOf(9))));
 
 	@Test
 	public void shouldThrowConstraintViolationExceptionWhenPayingPeopleListIsEmpty() {
@@ -63,7 +63,7 @@ public class PurchaseTests {
 
 		var determinedOrdersTotal = purchase.getOrdersTotal();
 
-		assertThat(determinedOrdersTotal).isEqualTo(new BigDecimal("50.00"));
+		assertThat(determinedOrdersTotal).isEqualTo(new BigDecimal("53.00"));
 	}
 
 	@Test
@@ -72,7 +72,7 @@ public class PurchaseTests {
 
 		var determinedAdditionalsTotal = purchase.getAdditionalsTotal();
 
-		assertThat(determinedAdditionalsTotal).isEqualTo(new BigDecimal("3.00"));
+		assertThat(determinedAdditionalsTotal).isEqualTo(new BigDecimal("2.70"));
 	}
 
 	private List<IAdditional> createAdditionalsListForTest() {
@@ -89,13 +89,13 @@ public class PurchaseTests {
 		                     .email(EMAIL_1)
 		                     .firstName(FIRST_NAME_1)
 		                     .lastName(LAST_NAME_1)
-		                     .order(createOrderForTest(BigDecimal.valueOf(2), BigDecimal.valueOf(40)))
+		                     .order(createOrderForTest(BigDecimal.valueOf(3), BigDecimal.valueOf(41)))
 		                     .build(),
 		               Person.builder()
 		                     .email(EMAIL_2)
 		                     .firstName(FIRST_NAME_2)
 		                     .lastName(LAST_NAME_2)
-		                     .order(createOrderForTest(BigDecimal.valueOf(8)))
+		                     .order(createOrderForTest(BigDecimal.valueOf(9)))
 		                     .build());
 	}
 

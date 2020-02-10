@@ -68,8 +68,8 @@ public class PurchaseServiceTests {
 	}
 
 	private List<PersonTotalDto> createPersonTotalDtoListForTest() {
-		return List.of(new PersonTotalDto(FULL_NAME_1, new BigDecimal("44.52")),
-		               new PersonTotalDto(FULL_NAME_2, new BigDecimal("8.48")));
+		return List.of(new PersonTotalDto(FULL_NAME_1, new BigDecimal("42.00")),
+		               new PersonTotalDto(FULL_NAME_2, new BigDecimal("8.00")));
 	}
 
 	private List<PersonDto> createPersonDtoListForTest() {
