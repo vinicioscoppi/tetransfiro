@@ -3,6 +3,7 @@ package com.tetransfiro.api.controllers;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import com.tetransfiro.application.PurchaseService;
 import com.tetransfiro.model.exceptions.TTConstraintViolationException;
 import com.tetransfiro.utils.IntegrityValidator;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/purchase")
 public class PurchaseController {

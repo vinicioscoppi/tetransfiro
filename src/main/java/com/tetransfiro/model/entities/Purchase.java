@@ -1,6 +1,7 @@
 package com.tetransfiro.model.entities;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,7 +56,7 @@ public class Purchase extends ValidatedData {
 	}
 
 	private BigDecimal determineProportionFor(String personName) {
-		return findOrderByPersonFullName(personName).getOrderTotal().divide(ordersTotal);
+		return findOrderByPersonFullName(personName).getOrderTotal().divide(ordersTotal, RoundingMode.FLOOR);
 	}
 
 	private Order findOrderByPersonFullName(String personName) {
